@@ -70,6 +70,7 @@
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{titlesec}
+\usepackage[bottom]{footmisc}
 
 \titleformat{\chapter}[display]
 {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
@@ -125,15 +126,6 @@
 		\textbf{ 01 tháng 08  - 20 tháng 08, 2023}
 		\\[3.0cm]
 
-		% \begin{center}
-		% 	\textbf{Tên đội thi}: APM \\
-		% 	\textbf{Thành viên:}
-		% 		&$-$ Nguyễn Thành Phát \\
-		% 		$-$ Lê Xuân An \\
-		% 		- Phạm Công Minh \\
-		% 	Ngày thực hiện: (15/08/23)
-		% \end{center}
-
 		\begin{tabular}{r l}
 			\textbf{Tên đội thi}: &APM \\
 			\textbf{Thành viên:}
@@ -152,19 +144,17 @@
 % \renewcommand{\thechapter}{\arabic{chapter}}
 % \renewcommand{\thesection}{\thechapter.\arabic{section}}
 % \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
-% \setcounter{chapter}{0}
+% \newcounter{chapter}{0}
 
-\newpage
-
-\chapter{Thông tin cần thiết về bài toán}
-\section{Giới thiệu về tỉnh Quảng Bình} % (fold)
-
-\subsection{Giới thiệu sơ bộ}
+\chapter*{Thông tin cần thiết về bài toán}
+\addcontentsline{toc}{chapter}{Thông tin cần thiết về bài toán}
+\section*{Giới thiệu sơ bộ về tỉnh Quảng Bình}
+\addcontentsline{toc}{section}{Giới thiệu sơ bộ về tỉnh Quảng Bình}
 \begin{flushleft}
 	Tỉnh Quảng Bình là một tỉnh nằm ở phía Bắc miền Trung Việt Nam, giáp biên giới với Lào. Tỉnh này có vị trí chiến lược trên tuyến đường biển Bắc - Nam của Việt Nam, và nổi tiếng với các danh lam thắng cảnh độc đáo, cùng với lịch sử và văn hóa đa dạng.
 	\\[\baselineskip]
 
-	\begin{figure}[h!]
+	\begin{figure}[H]
 		\centering
 		\includegraphics[width = \textwidth]{images/BandoQB.png}
 		\caption{Bản đồ hành chính tỉnh Quảng Bình}
@@ -173,7 +163,8 @@
 
 \newpage
 
-\subsection{Đặc điểm khí hậu} % (fold)
+\section*{Đặc điểm khí hậu của tỉnh Quảng Bình} % (fold)
+\addcontentsline{toc}{section}{Đặc điểm khí hậu của tỉnh Quảng Bình}
 \begin{flushleft}
 	Quảng Bình thuộc vùng khí hậu nhiệt đới, chia thành hai mùa rõ rệt là mùa mưa và mùa khô. Dưới đây là mô tả sơ bộ về khí hậu của Quảng Bình:
 	\begin{itemize}
@@ -186,6 +177,9 @@
 	\\[\baselineskip]
 
 	Các biến đổi khí hậu và thời tiết trong Quảng Bình cũng ảnh hưởng đến việc trồng trọt và sản xuất nông nghiệp. Những biện pháp ứng phó với lũ lụt, ngập úng, và thiếu nước cần được đưa ra để đảm bảo sự ổn định trong sản xuất nông nghiệp và đời sống cộng đồng trong khu vực này.
+	\\[\baselineskip]
+
+	Trung bình, mỗi năm tỉnh Quảng Bình đối mặt với 5-6 cơn bão và/hoặc áp thấp nhiệt đới. Tháng VIII, tháng IX và tháng X là những tháng mà bão thường xuyên xảy ra. Lũ dâng cao xảy ra ở các vùng đất và thung lũng thấp của tỉnh khi có 3 yếu tố diễn ra cùng một thời điểm: lượng mưa lớn, dòng chảy lớn từ thượng nguồn và thủy triều cao từ biển. Lũ lớn gây ra nhiều mất mát và thiệt hại cho cộng đồng.
 \end{flushleft}
 
 \chapter{Bài toán 1}
@@ -220,11 +214,10 @@
 	Để đạt được năng suất tốt và chất lượng hạt lúa cao, việc quản lý và tối ưu hóa nguồn ánh sáng cho cây lúa là rất quan trọng.
 	\\[\baselineskip]
 
-	\begin{figure}[H]
+	\begin{figure}[h!]
 		\centering
-		\includegraphics[width = 0.6\textwidth]{images/sodoanhsang.png}
+		\includegraphics[width = 0.9\textwidth]{images/sodoanhsang.png}
 		\caption{Ảnh hưởng của ánh sáng đến với cường độ quang hợp của cây trồng}
-		\label{fig:image}
 	\end{figure}
 \end{flushleft}
 % subsection ảnh_hưởng_của_ánh_sáng_đến_cây_lúa (end)
@@ -259,14 +252,11 @@
 		\centering
 		\caption{Liên hệ giữa nhiệt độ và năng suất lúa}
 		\includegraphics[width = \textwidth]{images/sodonhietdo.png}
-		\label{fig:image}
 	\end{figure}
 
 	Biểu đồ mô tả quan hệ giữa nhiệt độ và năng suất. Trong trường hợp không lai tạo để chịu nhiệt, việc tăng nhiệt độ trung bình vượt quá nhiệt độ tối ưu (${\blacklozenge}$) sẽ dẫn đến giảm năng suất trung bình và tăng biến động của năng suất, giả sử biến động nhiệt độ hàng năm vẫn không đổi.
 \end{flushleft}
 % subsection ảnh_hưởng_của_nhiệt_độ_đến_cây_lúa (end)
-
-\newpage
 
 \subsection{Ảnh hưởng của lượng nước đến cây lúa} % (fold)
 \label{sub:ảnh_hưởng_của_lượng_nước_đến_cây_lúa}
@@ -277,12 +267,9 @@
 		\centering
 		\includegraphics[width = \textwidth]{images/sodonuoc.png}
 		\caption{Biểu đồ nước cho cây lúa}
-		\label{fig:image}
 	\end{figure}
 \end{flushleft}
 % subsection ảnh_hưởng_của_lượng_nước_đến_cây_lúa (end)
-
-\newpage
 
 \subsection{Ảnh hưởng của biến đổi khí hậu đến với năng suất lúa} % (fold)
 \label{sub:ảnh_hưởng_của_biến_đổi_khí_hậu_đến_với_năng_suất_lúa}
@@ -307,8 +294,9 @@
 \end{flushleft}
 % subsection ảnh_hưởng_của_biến_đổi_khí_hậu_đến_với_năng_suất_lúa (end)
 
+\newpage
+
 \section{Ý (b)} % (fold)
-\label{sec:ý_}
 
 \begin{flushleft}
 	Sau khi đã tìm hiểu từ các nguồn, đội đã tổng hợp được sản lượng lúa của Quảng Bình từ năm 2000 - 2022
@@ -318,7 +306,6 @@
 		\centering
 		\includegraphics[width = \textwidth]{images/sanluonglua.png}
 		\caption{Sản lượng lúa của Quảng Bình từ năm 2000 - 2022}
-		\label{fig:image}
 	\end{figure}
 \end{flushleft}
 % section ý_ (end)
@@ -326,7 +313,6 @@
 \newpage
 
 \section{Ý (c)} % (fold)
-\label{sec:ý_}
 
 \begin{flushleft}
 	Sau khi đã tìm hiểu từ các nguồn, đội đã tổng hợp được các cơn bão đổ bộ vào khu vực miền Trung nói chung và Quảng Bình nói riêng trong giai đoạn 2000 - 2022.
@@ -344,14 +330,14 @@
 			2 & Doksuri & 15/9/2017 & 16/9/2017 & 12, 13 & Quảng Bình \\ \hline
 			3 & Sinlaku & 2/8/2020 & 5/8/2020 & 7 & Thanh Hóa \\ \hline
 			4 & Noul & 18/9/2020 & 19/9/2020 & 8, 9 & Huế \\ \hline
-			5 & Saudel & 26/10/2020 & 26/10/2020 & 6, 7 & Đã suy yếu thành ÁTNĐ$^{(*)}$ khi đổ bộ vào Quảng Bình \\ \hline
+			5 & Saudel & 26/10/2020 & 26/10/2020 & 6, 7 & Đã suy yếu thành ÁTNĐ\footnotemark[1] khi đổ bộ vào Quảng Bình \\ \hline
 			6 & Molave & 28/10/2020 & 29/10/2020 & 13 & Quảng Ngãi \\ \hline
 			7 & Vamco & 15/11/2020 & 17/11/2020 & 8.5 & Quảng Bình \\ \hline
 			8 & Podul & 30/08/2019 & 31/9/2019 & 9 & Quảng Bình \\ \hline
 			9 & Damrey & 4/11/2017 & 5/11/2017 & 12 & Khánh Hòa \\ \hline
 			10 & Lekima & 3/10/2007 & 4/10/2007 & 12 & Quảng Bình \\ \hline
-			11 & Bão số 5 (ÁTNĐ$^{(*)}$ 17W) & 23/9/2006 & 25/9/2006 & 8 & Quảng Bình \\ \hline
-			12 & Sơn Tinh & 18/7/2018 & 22/7/2018 & 6.5 & Suy yếu thành ÁTNĐ$^{(*)}$ \\ \hline
+			11 & Bão số 5 (ÁTNĐ\footnotemark[1] 17W) & 23/9/2006 & 25/9/2006 & 8 & Quảng Bình \\ \hline
+			12 & Sơn Tinh & 18/7/2018 & 22/7/2018 & 6.5 & Suy yếu thành ÁTNĐ\footnotemark[1] \\ \hline
 			13 & Talas & 17/7/2017 & 17/7/2017 & 10 & Hà Tĩnh \\ \hline
 			14 & Ketsana & 26/9/2009 & 30/9/2009 & 13 & Quảng Ngãi \\ \hline
 			15 & Xangsane & 1/10/2006 & 2/10/2006 & 13 & Đà Nẵng \\ \hline
@@ -364,27 +350,210 @@
 			22 & Linfa & 11/10/2020 & 11/10/2020 & 8 & Quảng Ngãi \\ \hline
 			23 & Nari & 15/10/2013 & 16/10/2013 & 13 & Đà Nẵng, Huế \\ \hline
 			24 & Podul & 14/11/2013 & 15/11/2013 & 8 & Quảng Ngãi \\ \hline
-			25 & Áp thấp nhiệt đới 18W & 18/9/2013 & 21/9/2013 & 7 & Huế \\ \hline
-			26 & Áp thấp nhiệt đới 23W & 9/10/2017 & 10/10/2017 & 7 & Hà Tĩnh \\ \hline
+			25 & ÁTNĐ\footnotemark[1] 18W & 18/9/2013 & 21/9/2013 & 7 & Huế \\ \hline
+			26 & ÁTNĐ\footnotemark[1] 23W & 9/10/2017 & 10/10/2017 & 7 & Hà Tĩnh \\ \hline
 			27 & Ofel & 16/10/2020 & 16/10/2020 & 6 & Đà Nẵng \\ \hline
-			28 & Áp thấp nhiệt đới Wilma (bão số 13) & 6/11/2013 & 8/11/2013 & 8 & Khánh Hòa \\ \hline
+			28 & ÁTNĐ\footnotemark[1] Wilma (bão số 13) & 6/11/2013 & 8/11/2013 & 8 & Khánh Hòa \\ \hline
 			29 & Aere (bão số 6) & 13/10/2016 & 17/10/2016 & 7 & Huế \\ \hline
 			30 & Sonca & 25/7/2017 & 29/7/2017 & 8 & Quảng Trị \\ \hline
 			31 & Nangka & 14/10/2020 & 14/10/2020 & 9 & Thanh Hóa \\ \hline
 			32 & Cempaka & 23/7/2021 & 24/7/2021 & 6 & Quảng Ninh \\ \hline
 			33 & Koguma & 11/6/2021 & 13/6/2021 & 9 & Thanh Hóa \\ \hline
 
-		\multicolumn{2}{c}{\footnotesize Note: ÁTNĐ: Áp thấp nhiệt đới} \\ \hline
+		% \multicolumn{2}{c}{\footnotesize Note: ÁTNĐ: Áp thấp nhiệt đới} \\ \hline
 		\end{tabular}
 		\end{adjustbox}
 	\end{table}
+
+	\footnotetext[1]{Áp thấp nhiệt đới.}
 
 	Giám khảo có thể xem file rõ hơn trong thư mục lời giải của team.
 \end{flushleft}
 
 \chapter{Bài toán 2} % (fold)
 \label{cha:bài_toán_2}
-afwuofb
+
+\section{Hướng tiếp cận bài toán} % (fold)
+\label{sec:hướng_tiếp_cận_bài_toán}
+\begin{flushleft}
+	Đầu tiên khi tiếp cận bài toán, chúng tôi nhận thấy rằng lượng dữ liệu để chuyển thành một mô hình dự đoán sẽ không đủ. Vì từ năm 2000 - 2020 chỉ có 17 cơn bão nên nhóm đã quyết định thêm 2 năm là 2021 và 2022.
+	\\[\baselineskip]
+
+	Một cơn bão khi đổ bộ vào đất liền sẽ có 2 thông tin quan trọng là cường độ khi đổ bộ và thời lượng đổ bộ (thời gian cơn bão tồn tại trong đất liền). Chúng ta đã có thời gian bắt đầu và thời gian kết thúc của bão, từ đó có thể suy ra được thời lượng. Giai đoạn đầu của bài toán, nhóm đã cố gắng xây dựng một mô hình nhận 2 đầu vào là thời lượng và cường độ của cơn bão, đầu ra là năng suất lúa dự đoán của tỉnh Quảng Bình sau khi cơn bão đi qua.
+\end{flushleft}
+% section hướng_tiếp_cận_bài_toán (end)
+
+\section{Hạn chế của mô hình ban đầu} % (fold)
+\label{sec:hạn_chế_của_mô_hình_ban_đầu}
+\begin{flushleft}
+	Sau khi nhận ra được input và output của bài toán ban đầu, nhóm đã có mô hình đơn giản sau đây:
+	$$
+		a_{1} \cdot {scale} + a_{2} \cdot {duration} + a_{3} = yield
+	$$
+	Trong đó:
+	\begin{itemize}
+		\item $scale$: cường độ của cơn bão.
+
+		\item $duration$: thời lượng của cơn bão.
+
+		\item $a_{1}, a_{2}$: lần lượt là hệ số hồi quy của $scale$ và $duration$.
+
+		\item $a_{3}$: hệ số tự do của phương trình.
+
+		\item $yield$: năng suất lúa dự đoán sau khi cơn bão đi qua.
+	\end{itemize}
+
+	Phương pháp xây dựng công thức trên gọi là hồi quy tuyến tính. Hồi quy tuyến tính là một phương pháp quan trọng trong thống kê và khoa học dữ liệu, được sử dụng để tìm mối quan hệ tuyến tính giữa hai hay nhiều biến số. Nó giúp chúng ta dự đoán một biến phụ thuộc dựa trên các biến độc lập tương ứng. Khi thực hiện hồi quy tuyến tính, mục tiêu chính là tìm ra một đường thẳng (hay siêu phẳng trong trường hợp nhiều biến) sao cho tổng bình phương của sai số giữa các điểm dữ liệu thực tế và giá trị dự đoán là nhỏ nhất. Điều này thường được thực hiện thông qua việc tối ưu hóa hàm mất mát (loss function).
+	\\[\baselineskip]
+
+	Với mô hình trên, kết quả của nhóm không được khả quan vì độ rời rạc của các điểm dữ liệu là quá lớn và sự tương quan giữa các đặc tính trong một input ($duration$ và $scale$) quá nhỏ. Công thức trên sẽ không thể tìm được các hệ số (vector hệ số) thích hợp đi qua các điểm mà không làm mất tính tổng quát của mô hình.
+\end{flushleft}
+% section hạn_chế_của_mô_hình_ban_đầu (end)
 % chapter bài_toán_2 (end)
+
+\section{Cải tiến mô hình trên} % (fold)
+\label{sec:cải_tiến_mô_hình_trên}
+\subsection{Nhận xét các nhược điểm} % (fold)
+\label{sub:nhận_xét_các_nhược_điểm}
+\begin{flushleft}
+	Những nhận xét về mô hình trên:
+	\begin{itemize}
+		\item Các điểm dữ liệu quá rời rạc.
+		\item Sự tương quan giữa các đặc tính (features) trong một input là quá nhỏ.
+		\item Công thức trên không đủ tổng quát.
+		\item Với lượng dữ liệu nhỏ, sẽ không đủ để có thể tạo ra một mô hình tổng quát.
+	\end{itemize}
+
+	Từ các nhận xét trên, chúng tôi đề xuất ra một số phương pháp tiếp cận và xử lý bài toán như sau.
+\end{flushleft}
+% subsection nhận_xét_các_nhược_điểm (end)
+
+\subsection{Thêm các thuộc tính vào input} % (fold)
+\label{ssub:thêm_các_thuộc_tính_vào_input}
+\begin{flushleft}
+	Giả sử có 2 cơn bão đổ bộ vào miền Trung Việt Nam trong cùng một thời điểm và cùng một độ lớn nhưng khác nhau về khoảng cách và thời gian đổ bộ. Cơn bão thứ nhất sẽ đổ bộ vào đầu mùa lúa và tại Huế, cơn bão thứ hai sẽ đổ bộ vào giữa mùa lúa và tại Quảng Bình. Theo mô hình cũ, thiệt hại của 2 cơn bão này lên Quảng Bình sẽ tương đương nhau, nhưng theo thực tế thì điều này sẽ không đúng. Vì thế chúng ta phải thêm một số đặc tính mới để phân loại các cơn bão một cách rõ ràng hơn.
+	\\[\baselineskip]
+
+	Sau khi xem xét về bộ dữ liệu, chúng tôi nhận thấy rằng có thể thêm các thuộc tính thời gian đổ bộ và khoảng cách của nó so với Quảng Bình vào input để có phân loại từng cơn bão.
+	\\[\baselineskip]
+
+	Công thức mới mà nhóm đề xuất:
+	$$
+		a_{1} \cdot {scale} + a_{2} \cdot {duration} + a_{3} \cdot {season} + a_{4} \cdot {distance} + a_{5} = yield
+	$$
+
+	Trong đó:
+	\begin{itemize}
+		\item $scale$: cường độ của cơn bão.
+
+		\item $duration$: thời lượng của cơn bão.
+
+		\item $season$: mùa đổ bộ của cơn bão ($season \in \{1, 2, 3\}$).
+			\begin{itemize}
+				\item $season = 1$: đầu mùa lúa
+
+				\item $season = 2$: cuối mùa lúa
+
+				\item $season = 3$: giữa mùa lúa
+			\end{itemize}
+
+		\item $distance$: khoảng cách của cơn bão so với Quảng Bình ($distance \in \{1, 2, 3\}$).
+			\begin{itemize}
+				\item $distance = 3$: bão đổ bộ trực tiếp vào Quảng Bình
+
+				\item $distance = 2$: bão đổ bộ vào các tỉnh giáp Quảng Bình
+
+				\item $distance = 1$: Bão đổ bộ vào các tỉnh còn lại
+			\end{itemize}
+
+		\item $a^{}_{\overline{1 \dots 4}}$: lần lượt là hệ số hồi quy của $scale$, $duration$, $season$ và $distance$.
+
+		\item $a_{5}$: hệ số tự do của phương trình.
+
+		\item $yield$: năng suất lúa dự đoán sau khi cơn bão đi qua.
+	\end{itemize}
+
+	Chúng tôi chọn các hệ số của $season$ và $distance$ dựa trên một số giả thiết sau:
+	\begin{itemize}
+		\item Giai đoạn giữa mùa là quan trọng nhất, tiếp đến là cuối mùa và sau đó là đầu mùa.
+
+		\item Bão đổ bộ trực tiếp vào Quảng Bình sẽ gây ảnh hưởng nghiêm trọng hơn so với bão đổ bộ vào các tỉnh giáp Quảng Bình. Lập luận tương tự với các tỉnh còn lại.
+	\end{itemize}
+
+	Với 2 feature mới đề xuất thêm, chúng ta có thể phân loại các cơn bão và đánh giá mức độ thiệt hại dựa trên thời gian bão đổ bộ và khoảng cách của nó đến Quảng Bình.
+\end{flushleft}
+% subsubsection thêm_các_thuộc_tính_vào_input (end)
+
+\subsection{Sinh thêm dữ liệu} % (fold)
+\label{sub:sinh_thêm_dữ_liệu}
+\begin{flushleft}
+	Một vấn đề nữa với bài toán mà nhóm chúng tôi gặp phải chính là dữ liệu. Lượng dữ liệu về bão khá ít để có thể đưa ra một mô hình đánh giá bài toán tổng quát. Do đó chúng tôi đã sử dụng các phương pháp nội suy từ dữ liệu đã có và sinh ra các dữ liệu mới dựa trên dữ liệu cũ, đồng thời giữ được đặc điểm của dữ liệu về mặt thống kê.
+	\\[\baselineskip]
+
+	Sau khi đã sinh ra được dữ liệu, chúng ta sẽ thực hiện xây dựng mô hình. Nhóm chúng tôi sử dụng thư viện scikit-learn để tìm các trọng số cho phương trình hồi quy tuyến tính đã đề ra ở trên.
+\end{flushleft}
+% subsection sinh_thêm_dữ_liệu (end)
+% section cải_tiến_mô_hình_trên (end)
+
+\section{Xây dựng model} % (fold)
+\label{sec:xây_dựng_model}
+\begin{flushleft}
+	Chi tiết về việc xây dựng mô hình sẽ có ở trong file notebook của nhóm.
+\end{flushleft}
+
+\section{Ưu nhược điểm của mô hình} % (fold)
+\label{sec:ưu_nhược_điểm_của_mô_hình}
+\begin{flushleft}
+	\textbf{Ưu điểm}: Ưu điểm của những mô hình hồi quy tuyến tính là sự đơn giản, dễ hiểu và dễ tiếp cận. Chúng ta có thể phân loại các cơn bão và đưa ra những dự đoán tương đối. Tuy nhiên để dự đoán chính xác những kết quả phức tạp thì sẽ là không thể.
+	\\[\baselineskip]
+
+	\textbf{Nhược điểm}:
+	\begin{itemize}
+		\item Chưa thực sự tìm hiểu sâu về các mô hình khác để đưa ra kết quả tối ưu nhất.
+
+		\item Các dữ liệu mà nhóm sinh ra sẽ chưa chắc đúng với thực tế vì dữ liệu được sinh ra để đảm bảo độ chính xác về mặt thống kê.
+	\end{itemize}
+\end{flushleft}
+% section ưu_nhược_điểm_của_mô_hình (end)
+
+\subsection{Mở rộng ra các bài toán khác} % (fold)
+\label{ssub:mở_rộng_ra_các_bài_toán_khác}
+\begin{flushleft}
+	Mô hình hồi quy tuyến tính trên có thể mở rộng ra một số bài toán khác để xử lý các vấn đề dự đoán đơn giản như giá nhà đất, dự đoán lợi nhuận kinh doanh, ...
+	\\[\baselineskip]
+
+	Các bạn trẻ hứng thú với công nghệ thông tin nói chung và học máy, học sâu, trí tuệ nhân tạo có thể tiếp xúc từ các mô hình này để làm quen với quá trình học.
+\end{flushleft}
+% subsubsection mở_rộng_ra_các_bài_toán_khác (end)
+% section xây_dựng_model (end)
+
+\chapter{Các đường dẫn tham khảo} % (fold)
+\label{cha:các_đường_dẫn_tham_khảo}
+\begin{flushleft}
+	\begin{enumerate}
+		\item Repository của nhóm. \url{https://github.com/XuananLe/MathModelingContest}
+
+		\item Wikipedia. \url{https://www.wikipedia.org/}
+
+		\item Thư viện scikit-learn. \url{https://scikit-learn.org/stable/user_guide.html}
+
+		\item Thư viện pandas. \url{https://pandas.pydata.org/docs/}
+
+		\item Các bài báo về sự ảnh hưởng của nước đến nông nghiệp \url{https://www.oecd.org/agriculture/topics/water-and-agriculture/}
+	\end{enumerate}
+\end{flushleft}
+% chapter các_đường_dẫn_tham_khảo (end)
+
+\chapter*{Lời cảm ơn và kết thúc}
+\addcontentsline{toc}{chapter}{Lời cảm ơn và kết thúc}
+\begin{flushleft}
+	Trước hết nhóm chúng tôi xin chân thành cảm ơn ban tổ chức, ban giám khảo và quý bạn đọc vì đã dành thời gian quý báu của mình để đọc bản trình bày về mô hình giải quyết vấn đề của nhóm chúng tôi. Mô hình chúng tôi không quá phức tạp để hiểu và giải quyết vấn đề, mô hình được xây dựng trên những yếu tố quan trọng để giải quyết vấn đề đó. Cái khó của việc xây dựng mô hình chính là tìm mối liên kết giữa các đặc tính trong input của mô hình và tầm ảnh hưởng của từng đặc tính đến tổng thể mô hình và bài toán. Cái hay của thuật toán nói trên chính là không chỉ dừng lại ở xử lý một bài toán đặc thù mà có thể mở rộng ra để xử lý các bài toán thực tiễn trong cuộc sống.
+	\\[\baselineskip]
+
+	Cảm ơn BTC vì đã tạo ra sân chơi bổ ích cho học sinh, sinh viên cọ sát, giao lưu với nhau. Dù rất tâm huyết và tỉ mỉ trong việc làm bài, song việc còn mắc một số lỗi nhỏ là không hoàn toàn tránh khỏi, nên chúng tôi mong mọi người bỏ qua.
+	\\[\baselineskip]
+
+	Xin chân thành cảm ơn.
+\end{flushleft}
 
 \end{document}
