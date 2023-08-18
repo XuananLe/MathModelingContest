@@ -85,6 +85,8 @@
 \definecolor{mGray}{rgb}{0.5,0.5,0.5}
 \definecolor{mPurple}{rgb}{0.58,0,0.82}
 \definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
 
 \lstdefinestyle{CStyle}{
 	backgroundcolor=\color{backgroundColour},
@@ -420,8 +422,11 @@
 	Những nhận xét về mô hình trên:
 	\begin{itemize}
 		\item Các điểm dữ liệu quá rời rạc.
+
 		\item Sự tương quan giữa các đặc tính (features) trong một input là quá nhỏ.
+
 		\item Công thức trên không đủ tổng quát.
+
 		\item Với lượng dữ liệu nhỏ, sẽ không đủ để có thể tạo ra một mô hình tổng quát.
 	\end{itemize}
 
@@ -517,10 +522,58 @@
 \end{flushleft}
 % section ưu_nhược_điểm_của_mô_hình (end)
 
-\subsection{Mở rộng ra các bài toán khác} % (fold)
-\label{ssub:mở_rộng_ra_các_bài_toán_khác}
+\section{Mở rộng ra các bài toán khác} % (fold)
+\label{sub:mở_rộng_ra_các_bài_toán_khác}
+
+\subsection{Một công thức khác}
 \begin{flushleft}
-	Mô hình hồi quy tuyến tính trên có thể mở rộng ra một số bài toán khác để xử lý các vấn đề dự đoán đơn giản như giá nhà đất, dự đoán lợi nhuận kinh doanh, ...
+	Vì năng suất lúa hàng năm phụ thuộc vào rất nhiều yếu tố như ở \textcolor{blue}{\hyperlink{section.1.1}{Bài toán 1, Ý (a)}}, và còn cả những yếu tố ngẫu nhiệt như dịch bệnh cùng các nhân tố nhân tạo như phân bón, ... Xu hướng năng suất của các năm có nhiều bão hoặc bão cấp độ cao hơn sẽ vẫn thường thấp hơn các năm trước, hoặc có tăng nhưng tăng rất ít so với 2 năm liên tiếp ít chịu ảnh hưởng của bão. Từ các nhận xét trên, chúng tôi đã bổ sung các nhân tố ảnh hưởng và phỏng đoán mức độ ảnh hưởng của bão liên hệ thế nào với các số liệu bão để cải thiện mô hình. Dưới đây là công thức:
+	$$
+		\triangle{U} = a_{1} \cdot \triangle{R} + a_{2} \cdot \triangle{S} + a_{3} \cdot \triangle{T} + a_{4} \cdot \triangle{D} + a_{5} \cdot \triangle{N} + a_{6}
+	$$
+
+	Trong đó:
+	\begin{itemize}
+		\item $U$: năng suất lúa của năm.
+
+		\item $\triangle{R}$: trung bình chênh lệch lượng mưa cùng tuần trong năm so với năm trước.
+
+		\item $\triangle{S}$: trung bình chênh lệch số giờ nắng cùng tuần trong năm so với năm trước.
+
+		\item $\triangle{T}$: trung bình chênh lệch nhiệt độ cùng tuần trong năm so với năm trước.
+
+		\item $\triangle{D}$: độ lệch mức ảnh hưởng bão.
+		\\
+		Với D được cho như công thức dưới:
+		$$
+			D = \sum\limits_{i = {1}}^{n} \sqrt{\frac{scale_{i} \cdot duration_{i}}{b_{1} \cdot season_{i} + b_{2} \cdot distance_{i} + b_{3}}} \cdot k_{{1}_{i}} \cdot k_{{2}_{i}}
+		$$
+		Trong đó:
+		\begin{itemize}
+			\item $n$: số cơn bão trong năm đó.
+
+			\item $scale, duration, season, distance$: các đặc tính của cơn bão như giải thích ở \textcolor{blue}{\hyperlink{subsection.2.3.2}{Bài toán 2, Thêm các thuộc tính vào input}}.
+
+			\item $b^{}_{\overline{1 \dots 2}}$: các hệ số của $season$ và $distance$.
+
+			\item $b_{3}$: hệ số tự do.
+
+			\item $k_{1}$: hệ số thể hiện nếu bão trùng đợt gió mùa Đông bắc (thiệt hại có thể tăng).
+
+			\item $k_{2}$: hệ số thể hiện nếu bão trùng đợt triều cường (thiệt hại có thể tăng).
+		\end{itemize}
+
+		\item $\triangle{N}$: độ chênh lệch năng suất (độ tốt) của giống lúa.
+
+		\item $a^{}_{\overline{1 \dots 5}}$: hệ số tương ứng với các thuộc tính của công thức.
+
+		\item $a_{6}$: hệ số tự do của phương trình.
+	\end{itemize}
+\end{flushleft}
+
+\subsection{Mở rộng ra các bài toán thực tế}
+\begin{flushleft}
+	Mô hình hồi quy tuyến tính trên do nhóm đề xuất có thể mở rộng ra một số bài toán khác để xử lý các vấn đề dự đoán đơn giản như giá nhà đất, dự đoán lợi nhuận kinh doanh, ...
 	\\[\baselineskip]
 
 	Các bạn trẻ hứng thú với công nghệ thông tin nói chung và học máy, học sâu, trí tuệ nhân tạo có thể tiếp xúc từ các mô hình này để làm quen với quá trình học.
@@ -528,8 +581,15 @@
 % subsubsection mở_rộng_ra_các_bài_toán_khác (end)
 % section xây_dựng_model (end)
 
-\chapter{Các đường dẫn tham khảo} % (fold)
-\label{cha:các_đường_dẫn_tham_khảo}
+\section{Kết luận} % (fold)
+\label{sec:kết_luận}
+\begin{flushleft}
+	Mô hình chúng tôi đề xuất dựa trên thời điểm làm bài báo cáo này, theo thời gian có thể sẽ sai lệch. Mô hình tuy có thể không mang lại kết quả chính xác nhất nhưng đơn giản, dễ làm và dễ hiểu. Nếu áp dụng trong tương lai, với nhiều dữ liệu hơn, chúng tôi có thể chỉnh sửa lại mức ảnh hưởng của từng đặc tính cho phù hợp với thời gian.
+\end{flushleft}
+% section kết_luận (end)
+
+\chapter*{Các đường dẫn tham khảo} % (fold)
+\addcontentsline{toc}{chapter}{Các đường dẫn tham khảo}
 \begin{flushleft}
 	\begin{enumerate}
 		\item Repository của nhóm. \url{https://github.com/XuananLe/MathModelingContest}
@@ -551,7 +611,7 @@
 	Trước hết nhóm chúng tôi xin chân thành cảm ơn ban tổ chức, ban giám khảo và quý bạn đọc vì đã dành thời gian quý báu của mình để đọc bản trình bày về mô hình giải quyết vấn đề của nhóm chúng tôi. Mô hình chúng tôi không quá phức tạp để hiểu và giải quyết vấn đề, mô hình được xây dựng trên những yếu tố quan trọng để giải quyết vấn đề đó. Cái khó của việc xây dựng mô hình chính là tìm mối liên kết giữa các đặc tính trong input của mô hình và tầm ảnh hưởng của từng đặc tính đến tổng thể mô hình và bài toán. Cái hay của thuật toán nói trên chính là không chỉ dừng lại ở xử lý một bài toán đặc thù mà có thể mở rộng ra để xử lý các bài toán thực tiễn trong cuộc sống.
 	\\[\baselineskip]
 
-	Cảm ơn BTC vì đã tạo ra sân chơi bổ ích cho học sinh, sinh viên cọ sát, giao lưu với nhau. Dù rất tâm huyết và tỉ mỉ trong việc làm bài, song việc còn mắc một số lỗi nhỏ là không hoàn toàn tránh khỏi, nên chúng tôi mong mọi người bỏ qua.
+	Cảm ơn ban tổ chức vì đã tạo ra sân chơi bổ ích cho học sinh, sinh viên cọ sát, giao lưu với nhau. Dù rất tâm huyết và tỉ mỉ trong việc làm bài, song việc còn mắc một số lỗi nhỏ là không hoàn toàn tránh khỏi, nên chúng tôi mong mọi người bỏ qua.
 	\\[\baselineskip]
 
 	Xin chân thành cảm ơn.
